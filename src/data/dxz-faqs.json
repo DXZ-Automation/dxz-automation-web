@@ -1,0 +1,74 @@
+[
+  {
+    "id": "what-is-dxz",
+    "tags": ["what", "who", "dxz", "automation", "about", "do", "company", "agency"],
+    "question": "What does DXZ Automation do?",
+    "answer": "We build automated revenue recovery systems for trades businesses — HVAC, plumbing, roofing, electrical, and more. When you're on a job and can't answer the phone, our systems respond for you: text the caller back in 60 seconds, send an instant estimate request, and remind clients before their appointment. Three systems, installed in 7 days, built to recover the money your crew is leaving on the table every week."
+  },
+  {
+    "id": "missed-call",
+    "tags": ["missed", "call", "text", "sms", "callback", "respond", "phone", "voicemail", "ring", "answer", "away", "busy", "job", "site"],
+    "question": "How does Missed Call Text-Back work for a trades business?",
+    "answer": "You're on a roof or under a sink — you miss a call. Right now, that person calls the next HVAC or plumber in Google. With Missed Call Text-Back, they get an automatic SMS from your number within 60 seconds: 'Hey, we saw you called — what's going on? We'll get back to you shortly.' Lead stays warm, job stays yours. Most trades owners recover $3K–$8K/month with this one system. Price: $1,999."
+  },
+  {
+    "id": "speed-to-lead",
+    "tags": ["speed", "lead", "response", "fast", "instant", "form", "inquiry", "contact", "google", "facebook", "ad", "estimate", "quote", "request"],
+    "question": "Why does response speed matter so much for trades leads?",
+    "answer": "When someone submits a Google Local Service Ad, a Facebook lead form, or a website contact form, they're also doing it on three other contractor pages at the same time. First to respond wins the job — and the research says your odds drop 10× if you wait more than 5 minutes. Speed-to-Lead fires an automated reply the second the lead comes in, so your number is in their phone before your competition even sees the notification. Price: $1,999."
+  },
+  {
+    "id": "estimate-noshow",
+    "tags": ["estimate", "quote", "noshow", "no-show", "no-shows", "noshows", "drive", "wasted", "trip", "show", "nobody", "home", "appointment", "stop", "prevent", "reduce", "miss", "missed"],
+    "question": "I drive out to give estimates and people aren't home — can you fix that?",
+    "answer": "That's exactly what No-Show Recovery handles. Before every estimate or service appointment, a multi-touch SMS sequence goes out: a confirmation ask, a 24-hour reminder, and a same-day heads-up. If they're not going to be there, you find out before you load the truck. Trades owners typically cut wasted estimate trips by 60–80%. Price: $1,999."
+  },
+  {
+    "id": "no-show-recovery",
+    "tags": ["no-show", "noshow", "cancel", "cancellation", "appointment", "reminder", "reschedule", "confirm", "ghost", "disappear"],
+    "question": "How does No-Show Recovery work?",
+    "answer": "Automated SMS reminders go out before every appointment — a confirmation, a 24-hour reminder, a day-of nudge. Customers who were going to ghost you either confirm, reschedule, or cancel in advance instead of just not showing. You get your schedule back. Clients see 60–80% reduction in no-shows. Connects to Google Calendar, Calendly, or whatever booking system you already use. Price: $1,999."
+  },
+  {
+    "id": "emergency-calls",
+    "tags": ["emergency", "urgent", "after hours", "burst", "pipe", "heat", "furnace", "flood", "weekend", "night", "off hours"],
+    "question": "What about emergency calls — burst pipes, no heat in winter?",
+    "answer": "Those are the highest-value calls you get, and the ones most likely to go to whoever picks up first at 11pm. Missed Call Text-Back fires on every missed call regardless of hour — including after-hours emergencies. The customer gets an instant text, you get a notification, and you can decide whether to call back right now or route it to an after-hours line. That $3,000 furnace call doesn't go to your competitor just because you were asleep."
+  },
+  {
+    "id": "seasonal-rush",
+    "tags": ["busy", "season", "summer", "winter", "rush", "volume", "peak", "spring", "fall", "overwhelmed", "slammed", "capacity"],
+    "question": "We get slammed in summer (or winter) — does this handle volume spikes?",
+    "answer": "That's exactly when these systems pay off most. When your phone is ringing faster than you can answer — roofing season, winter HVAC calls — every missed call is a $1,000+ job walking out the door. The automation doesn't care if it's handling 3 missed calls or 300. It fires every single time, keeps every lead warm, and puts them in your pipeline automatically. You focus on the work; the system handles the intake."
+  },
+  {
+    "id": "bundle-pricing",
+    "tags": ["bundle", "all", "three", "package", "together", "price", "cost", "discount", "how much", "total", "pricing"],
+    "question": "What does it cost to get all three systems?",
+    "answer": "All three — Missed Call Text-Back, Speed-to-Lead, and No-Show Recovery — bundle at $4,999 (vs $5,997 individually). Most trades owners recover that in the first month from jobs they were already losing. You own it outright after install. We also offer an AI Growth Partner retainer at $9,999/month for businesses that want ongoing automation builds and optimization."
+  },
+  {
+    "id": "delivery-time",
+    "tags": ["how long", "timeline", "delivery", "days", "week", "build", "fast", "quick", "live", "ready", "when", "running", "installed", "setup", "launch", "go live", "active"],
+    "question": "How fast can you have this running for my business?",
+    "answer": "Each system is live within 7 days of our call. We handle all the setup — Twilio, Zapier, your calendar, your phone number. You answer a few questions, hand off your credentials, and we do the rest. No month-long onboarding. You're capturing missed calls by next week."
+  },
+  {
+    "id": "what-trades",
+    "tags": ["hvac", "plumbing", "plumber", "roofing", "roofer", "electrical", "electrician", "contractor", "landscaping", "pest", "restoration", "concrete", "fencing", "garage", "flooring", "painting", "trades", "work", "industry", "type"],
+    "question": "What trades businesses do you work with?",
+    "answer": "HVAC, plumbing, roofing, electrical, general contracting, landscaping, pest control, restoration, concrete, fencing, garage doors, flooring, painting — if your phone is your pipeline and a missed call costs you real money, these systems were built for you. We've built them specifically around how trades businesses operate: job sites, dispatch scheduling, estimate trips, and seasonal demand."
+  },
+  {
+    "id": "do-i-need-tech",
+    "tags": ["tech", "technical", "setup", "complicated", "hard", "integrate", "existing", "software", "developer", "coding", "need", "experience", "knowledge", "learn", "manage", "computer"],
+    "question": "I'm not a tech person — will I be able to use this?",
+    "answer": "You don't touch any of it. We build it, test it, and hand it to you working. You're not sitting at a desk managing software — you're running jobs. The only thing you do is answer texts from actual customers. If something breaks, call us and we fix it. Most of our clients are trades owners who haven't changed their phone setup in years."
+  },
+  {
+    "id": "how-to-start",
+    "tags": ["start", "begin", "book", "call", "consult", "get started", "sign", "hire", "next step", "ready", "interested", "talk"],
+    "question": "How do I get started?",
+    "answer": "Book a 15-minute call at cal.com/dxz-automation. We look at your current setup — how many calls you're missing, how fast you're responding to leads, how many estimate no-shows you're eating — and tell you exactly which system recovers the most money first. No pitch, no pressure. If it doesn't make sense for your business, we'll tell you that too."
+  }
+]

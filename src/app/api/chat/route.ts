@@ -1,25 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import faqs from "@/data/dxz-faqs.json";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 // ── Rate limiter ──────────────────────────────────────────────────────────────
-// 20 requests per IP per 60-second window.
-// Map is process-scoped — resets on cold starts, which is acceptable for a
-// chat widget. For persistent limiting, move to Vercel KV or WAF rules.
-const rateMap = new Map<string, { count: number; reset: number }>();
-const RATE_LIMIT = 20;
-const RATE_WINDOW_MS = 60_000;
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateMap.get(ip) ?? { count: 0, reset: now + RATE_WINDOW_MS };
-  if (now > entry.reset) {
-    entry.count = 0;
-    entry.reset = now + RATE_WINDOW_MS;
-  }
-  entry.count++;
-  rateMap.set(ip, entry);
-  return entry.count > RATE_LIMIT;
-}
+// 20 requests per IP per 60-second window via Upstash Redis (sliding window).
+// Falls back to allowing all requests if UPSTASH_REDIS_REST_URL /
+// UPSTASH_REDIS_REST_TOKEN are not set (e.g. local dev without Redis).
 
 // ── FAQ matching ──────────────────────────────────────────────────────────────
 const STOPWORDS = new Set([
@@ -104,7 +90,8 @@ Answer in 2–3 sentences. Use trades language: job site, missed call, estimate 
 // ── Route handler ─────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
-  if (isRateLimited(ip)) {
+  const { success } = await checkRateLimit(ip);
+  if (!success) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
 

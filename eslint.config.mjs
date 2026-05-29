@@ -12,6 +12,14 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vercel build output — minified bundles, not app source
+    ".vercel/**",
+    // Claude Code internals — not app source; use CommonJS require() by design
+    ".claude/**",
+    ".agents/**",
+    ".claude-flow/**",
+    ".codex/**",
+    ".swarm/**",
   ]),
 ]);
 

@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { DXZChatWidget } from "@/components/DXZChatWidget";
+import { validateEnvironment } from "@/lib/env-check";
+
+// Validate required env vars at startup; surfaces misconfigurations in logs.
+validateEnvironment();
 
 const playfair = Playfair_Display({
   variable: "--font-serif",

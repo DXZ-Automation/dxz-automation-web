@@ -89,7 +89,10 @@ Answer in 2–3 sentences. Use trades language: job site, missed call, estimate 
 
 // ── Route handler ─────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0].trim() ?? "unknown";
+  // Use Next.js/Vercel-verified req.ip first; fall back to rightmost XFF entry
+  // (appended by Vercel — cannot be spoofed). Never use the leftmost XFF value.
+  const xffParts = (req.headers.get("x-forwarded-for") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+  const ip = (req as NextRequest & { ip?: string }).ip ?? xffParts[xffParts.length - 1] ?? "unknown";
   const { success } = await checkRateLimit(ip);
   if (!success) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });

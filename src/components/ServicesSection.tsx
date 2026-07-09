@@ -7,31 +7,28 @@ const services = [
     number: "01",
     name: "Missed Call Text-Back",
     recovery: "$3K–$8K / month",
-    time: "4–6 hrs to build",
+    time: "4–6 hrs",
     description:
       "Every missed call triggers an automatic SMS within 60 seconds. Your lead stays warm until you can call back — instead of calling your competitor.",
     stack: ["Twilio", "Zapier", "Google Sheets"],
-    price: "$1,999",
   },
   {
     number: "02",
     name: "Speed-to-Lead",
     recovery: "10–20× conversion lift",
-    time: "6–8 hrs to build",
+    time: "6–8 hrs",
     description:
       "Instant automated response the moment a lead comes in via any channel. Before they open the next Google result. First-to-respond wins.",
     stack: ["Zapier", "Twilio", "Gmail", "Calendly"],
-    price: "$1,999",
   },
   {
     number: "03",
     name: "No-Show Recovery",
     recovery: "60–80% reduction",
-    time: "3–4 hrs to build",
+    time: "3–4 hrs",
     description:
       "Multi-touch SMS sequence before every appointment — confirm, remind, recover. Turn silent cancellations into rescheduled revenue.",
     stack: ["Zapier", "Twilio", "Google Calendar"],
-    price: "$1,999",
   },
 ];
 
@@ -63,15 +60,15 @@ export function ServicesSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <p className="font-mono text-xs text-zinc-600 tracking-widest uppercase">Bundle pricing</p>
-            <p className="font-serif text-4xl font-black text-white mt-1">$4,999</p>
-            <p className="font-mono text-xs text-zinc-700 tracking-widest uppercase mt-1">all three systems</p>
+            <p className="font-mono text-xs text-zinc-600 tracking-widest uppercase">Full deployment</p>
+            <p className="font-serif text-4xl font-black text-white mt-1">13–18 hrs</p>
+            <p className="font-mono text-xs text-zinc-700 tracking-widest uppercase mt-1">all three systems, built</p>
           </motion.div>
         </div>
       </div>
 
       <div className="mx-auto max-w-[1440px] space-y-px">
-        {services.map(({ number, name, recovery, time, description, stack, price }, i) => (
+        {services.map(({ number, name, recovery, time, description, stack }, i) => (
           <motion.div
             key={number}
             className="group relative border border-white/[0.04] bg-[#030303] hover:bg-[#0c0c0c] transition-all duration-500 p-10 lg:p-14"
@@ -105,15 +102,37 @@ export function ServicesSection() {
                 </div>
               </div>
 
-              {/* Price + time */}
+              {/* Time to build */}
               <div className="text-right lg:text-right">
-                <p className="font-serif text-3xl font-black text-white">{price}</p>
-                <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-700 mt-1">{time}</p>
+                <p className="font-serif text-2xl lg:text-3xl font-bold text-white">{time}</p>
+                <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-700 mt-1">Build time</p>
               </div>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Customized Automation */}
+      <motion.div
+        className="mx-auto max-w-[1440px] mt-6"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="border border-white/[0.06] bg-[#080808] p-10 lg:p-14 flex flex-wrap items-center justify-between gap-8">
+          <div>
+            <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-2">Beyond The Standard Build</p>
+            <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white">Customized Automation</h3>
+            <p className="font-sans text-sm text-zinc-500 mt-2 max-w-lg">
+              Not every operational bottleneck fits a packaged system. When the fix is specific to how your business runs, we design and build it from the ground up — scoped to the exact workflow costing you time or money.
+            </p>
+          </div>
+          <div className="font-mono text-[10px] tracking-widest uppercase text-zinc-500 border border-white/[0.08] px-4 py-2 shrink-0">
+            Scoped after discovery call
+          </div>
+        </div>
+      </motion.div>
 
       {/* Ongoing retainer */}
       <motion.div
@@ -123,20 +142,24 @@ export function ServicesSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="border border-red-600/20 bg-red-950/10 p-10 lg:p-14 flex flex-wrap items-center justify-between gap-8">
-          <div>
-            <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-2">Ongoing Partnership</p>
-            <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white">AI Growth Partner</h3>
-            <p className="font-sans text-sm text-zinc-500 mt-2 max-w-lg">
-              Continuous automation builds, optimization, and expansion. We run your revenue infrastructure so you don&apos;t have to think about it.
-            </p>
-          </div>
-          <div className="text-right">
-            <p className="font-serif text-4xl font-black text-red-500">$9,999</p>
-            <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-700 mt-1">/ month</p>
-          </div>
+        <div className="border border-red-600/20 bg-red-950/10 p-10 lg:p-14">
+          <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-2">Ongoing Partnership</p>
+          <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white">AI Growth Partner</h3>
+          <p className="font-sans text-sm text-zinc-500 mt-2 max-w-lg">
+            Continuous automation builds, optimization, and expansion. We run your revenue infrastructure so you don&apos;t have to think about it.
+          </p>
         </div>
       </motion.div>
+
+      <motion.p
+        className="mx-auto max-w-[1440px] mt-6 font-mono text-[10px] tracking-widest uppercase text-zinc-700"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        Pricing for every system — packaged, custom, or ongoing — is discussed on your free discovery call.
+      </motion.p>
     </section>
   );
 }

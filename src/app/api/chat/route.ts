@@ -47,19 +47,20 @@ function findFaq(query: string) {
 async function openAIFallback(query: string): Promise<string> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    return "I'm best at answering questions about DXZ Automation's services and pricing. For anything else, book a call at cal.com/dxz-automation.";
+    return "I'm best at answering questions about DXZ Automation's services. For anything else, book a call at cal.com/dxz-automation.";
   }
 
   const systemPrompt = `You are a concise sales assistant for DXZ Automation, an AI revenue recovery agency that works with trades businesses.
 Primary clients: HVAC, plumbing, roofing, electrical, general contracting, landscaping, and other trades.
 Core pain points we solve: missed calls while on job sites, slow response to Google/Facebook leads, estimate no-shows, wasted drive time.
 Three systems we build:
-- Missed Call Text-Back ($1,999): SMS within 60s of any missed call — keeps the lead from calling your competitor. Recovers $3K–$8K/month.
-- Speed-to-Lead ($1,999): instant automated reply when a lead comes in via any channel. First-to-respond wins the job.
-- No-Show Recovery ($1,999): multi-touch SMS before every appointment. Cuts estimate no-shows and service cancellations 60–80%.
-- Bundle: all three for $4,999. Most trades owners recover this in the first month.
-- AI Growth Partner retainer: $9,999/month for ongoing builds.
-Book a call: cal.com/dxz-automation (15 min, no pitch, straight answer on ROI).
+- Missed Call Text-Back: SMS within 60s of any missed call — keeps the lead from calling your competitor. Recovers $3K–$8K/month.
+- Speed-to-Lead: instant automated reply when a lead comes in via any channel. First-to-respond wins the job.
+- No-Show Recovery: multi-touch SMS before every appointment. Cuts estimate no-shows and service cancellations 60–80%.
+- Bundle: all three systems as one coordinated install.
+- AI Growth Partner: ongoing retainer for continuous automation builds, optimization, and expansion.
+Pricing is scoped per client — never state a dollar figure. If asked about cost, say it depends on scope and direct them to book a free call at cal.com/dxz-automation.
+Book a free call: cal.com/dxz-automation (15 min, no pitch, straight answer on ROI).
 Answer in 2–3 sentences. Use trades language: job site, missed call, estimate trip, service call. Dollar-specific, no fluff. Never use em-dashes or "leverage".`;
 
   const res = await fetch("https://api.openai.com/v1/chat/completions", {

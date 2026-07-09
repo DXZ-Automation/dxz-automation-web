@@ -4,31 +4,32 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    number: "01",
     name: "Missed Call Text-Back",
     recovery: "$3K–$8K / month",
     time: "4–6 hrs",
     description:
       "Every missed call triggers an automatic SMS within 60 seconds. Your lead stays warm until you can call back — instead of calling your competitor.",
-    stack: ["Twilio", "Zapier", "Google Sheets"],
   },
   {
-    number: "02",
     name: "Speed-to-Lead",
     recovery: "10–20× conversion lift",
     time: "6–8 hrs",
     description:
       "Instant automated response the moment a lead comes in via any channel. Before they open the next Google result. First-to-respond wins.",
-    stack: ["Zapier", "Twilio", "Gmail", "Calendly"],
   },
   {
-    number: "03",
     name: "No-Show Recovery",
     recovery: "60–80% reduction",
     time: "3–4 hrs",
     description:
       "Multi-touch SMS sequence before every appointment — confirm, remind, recover. Turn silent cancellations into rescheduled revenue.",
-    stack: ["Zapier", "Twilio", "Google Calendar"],
+  },
+  {
+    name: "Customized Automation",
+    recovery: "custom scope",
+    time: "Varies",
+    description:
+      "Not every operational bottleneck fits one of the three core systems above. When the fix is specific to how your business runs, we design and build it from the ground up — scoped to the exact workflow costing you time or money.",
   },
 ];
 
@@ -49,7 +50,7 @@ export function ServicesSection() {
             </p>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
               <span className="block">Three systems.</span>
-              <span className="mt-3 block italic">One install.</span>
+              <span className="mt-3 block italic">Together or alone.</span>
             </h2>
           </motion.div>
 
@@ -68,9 +69,9 @@ export function ServicesSection() {
       </div>
 
       <div className="mx-auto max-w-[1440px] space-y-px">
-        {services.map(({ number, name, recovery, time, description, stack }, i) => (
+        {services.map(({ name, recovery, time, description }, i) => (
           <motion.div
-            key={number}
+            key={name}
             className="group relative border border-white/[0.04] bg-[#030303] hover:bg-[#0c0c0c] transition-all duration-500 p-10 lg:p-14"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -80,10 +81,7 @@ export function ServicesSection() {
             {/* Red left border on hover */}
             <div className="absolute left-0 top-0 h-full w-[2px] bg-red-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-10 items-start">
-              {/* Number */}
-              <span className="font-mono text-xs tracking-widest text-zinc-700">{number}</span>
-
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-start">
               {/* Content */}
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-4">
@@ -93,13 +91,6 @@ export function ServicesSection() {
                   </span>
                 </div>
                 <p className="font-sans text-sm text-zinc-500 leading-relaxed max-w-xl">{description}</p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {stack.map((s) => (
-                    <span key={s} className="font-mono text-[10px] tracking-widest uppercase text-zinc-700 border border-white/[0.05] px-2 py-1">
-                      {s}
-                    </span>
-                  ))}
-                </div>
               </div>
 
               {/* Time to build */}
@@ -112,28 +103,6 @@ export function ServicesSection() {
         ))}
       </div>
 
-      {/* Customized Automation */}
-      <motion.div
-        className="mx-auto max-w-[1440px] mt-6"
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="border border-white/[0.06] bg-[#080808] p-10 lg:p-14 flex flex-wrap items-center justify-between gap-8">
-          <div>
-            <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-2">Beyond The Standard Build</p>
-            <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white">Customized Automation</h3>
-            <p className="font-sans text-sm text-zinc-500 mt-2 max-w-lg">
-              Not every operational bottleneck fits a packaged system. When the fix is specific to how your business runs, we design and build it from the ground up — scoped to the exact workflow costing you time or money.
-            </p>
-          </div>
-          <div className="font-mono text-[10px] tracking-widest uppercase text-zinc-500 border border-white/[0.08] px-4 py-2 shrink-0">
-            Scoped after discovery call
-          </div>
-        </div>
-      </motion.div>
-
       {/* Ongoing retainer */}
       <motion.div
         className="mx-auto max-w-[1440px] mt-6"
@@ -142,7 +111,10 @@ export function ServicesSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="border border-red-600/20 bg-red-950/10 p-10 lg:p-14">
+        <div className="group relative border border-red-600/20 bg-red-950/10 p-10 lg:p-14">
+          {/* Red left border on hover */}
+          <div className="absolute left-0 top-0 h-full w-[2px] bg-red-600 scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
+
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-2">Ongoing Partnership</p>
           <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white">AI Growth Partner</h3>
           <p className="font-sans text-sm text-zinc-500 mt-2 max-w-lg">

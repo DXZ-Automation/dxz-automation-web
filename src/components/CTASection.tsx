@@ -50,7 +50,7 @@ export function CTASection() {
           </div>
 
           <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-700 mt-8">
-            — Zak Saumier / DXZ Automation · AI Revenue Recovery Systems
+            — Zak X Daniel / DXZ Automation · AI Revenue Recovery Systems
           </p>
         </div>
       </motion.div>

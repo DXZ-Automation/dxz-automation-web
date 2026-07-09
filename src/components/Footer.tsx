@@ -22,7 +22,7 @@ export function Footer() {
         </p>
 
         <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-800">
-          Built by Zak Saumier
+          Built by Zak X Daniel
         </p>
       </div>
     </motion.footer>

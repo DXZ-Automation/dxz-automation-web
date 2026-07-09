@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const steps = [
   { day: "Day 0", action: "Close", detail: "Welcome email, client folder, onboarding questionnaire sent." },
   { day: "Day 1", action: "Call + Build", detail: "30-minute onboarding call. Build starts immediately after." },
-  { day: "Days 1–3", action: "Build", detail: "All three systems built — missed call, lead response, no-show." },
+  { day: "Days 1–3", action: "Build", detail: "Complete Automation System Built" },
   { day: "Day 3", action: "Review", detail: "Copy review check-in. Confirm messaging before going live." },
   { day: "Days 4–6", action: "QA", detail: "Edge cases, failure states, confirmation flows. Everything tested." },
   { day: "Day 7", action: "Live", detail: "Go-live launch, client walkthrough, handoff, support window opens." },

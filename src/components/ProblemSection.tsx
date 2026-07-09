@@ -77,7 +77,7 @@ export function ProblemSection() {
             &ldquo;We find the money you&apos;re already losing<br />and automate getting it back.&rdquo;
           </p>
           <p className="font-mono text-xs tracking-widest uppercase text-zinc-700 mt-4">
-            — Zak Saumier, DXZ Automation
+            — Zak X Daniel, DXZ Automation
           </p>
         </motion.div>
       </div>

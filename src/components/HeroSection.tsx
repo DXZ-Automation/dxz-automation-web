@@ -84,7 +84,7 @@ function Word({ word, delay }: { word: string; delay: number }) {
       className={`inline-block mr-[0.22em] last:mr-0 ${isAccent ? "italic text-red-500" : ""}`}
       initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ delay, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ delay, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
     >
       {word}
     </motion.span>
@@ -128,7 +128,7 @@ export function HeroSection() {
         {/* Left-aligned content */}
         <motion.div
           style={{ y, opacity }}
-          className="relative z-10 w-full max-w-[1440px] mx-auto px-[72px] pt-28 pb-20"
+          className="relative z-10 w-full max-w-[1440px] mx-auto px-6 pt-28 pb-20 lg:px-[72px]"
         >
           <div className="max-w-[780px]">
             {/* Eyebrow */}
@@ -136,7 +136,7 @@ export function HeroSection() {
               className="flex items-center gap-4 mb-14"
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
+              transition={{ delay: 0.05, duration: 0.3 }}
             >
               <div className="w-8 h-px bg-red-600 opacity-50" />
               <span className="font-mono text-[9px] tracking-[0.45em] uppercase text-red-500">
@@ -147,7 +147,7 @@ export function HeroSection() {
             {/* Headline */}
             <h1 className="font-mono text-[clamp(3.5rem,7vw,7.5rem)] font-black leading-[0.92] tracking-tight text-white mb-10">
               {headline.map((word, i) => (
-                <Word key={i} word={word} delay={0.2 + i * 0.08} />
+                <Word key={i} word={word} delay={0.1 + i * 0.03} />
               ))}
             </h1>
 
@@ -156,7 +156,7 @@ export function HeroSection() {
               className="font-mono text-base font-light text-zinc-500 leading-[1.8] max-w-[440px] mb-14"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.95, duration: 0.7 }}
+              transition={{ delay: 0.3, duration: 0.35 }}
             >
               Missed calls. Slow lead response. No-shows.
               <br />
@@ -168,7 +168,7 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1, duration: 0.55 }}
+              transition={{ delay: 0.35, duration: 0.3 }}
             >
               <ShinyButton
                 variant="red"
@@ -192,7 +192,7 @@ export function HeroSection() {
             className="hidden lg:flex absolute right-[72px] top-1/2 -translate-y-1/2 flex-col border-l border-white/[0.04]"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.3, duration: 0.7 }}
+            transition={{ delay: 0.4, duration: 0.4 }}
           >
             {stats.map(({ value, label }, i) => (
               <motion.div
@@ -200,7 +200,7 @@ export function HeroSection() {
                 className="px-12 py-8 border-b border-white/[0.04] last:border-b-0"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.35 + i * 0.1, duration: 0.5 }}
+                transition={{ delay: 0.42 + i * 0.06, duration: 0.3 }}
               >
                 <span className="font-mono text-3xl font-black text-white block mb-1.5">{value}</span>
                 <span className="font-mono text-[8px] tracking-[0.3em] uppercase text-zinc-700">{label}</span>
@@ -210,10 +210,10 @@ export function HeroSection() {
 
           {/* Scroll indicator */}
           <motion.div
-            className="absolute bottom-8 left-[72px] flex items-center gap-3"
+            className="absolute bottom-8 left-6 flex items-center gap-3 lg:left-[72px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.9, duration: 0.6 }}
+            transition={{ delay: 0.6, duration: 0.3 }}
           >
             <div className="relative h-10 w-px overflow-hidden">
               <motion.div

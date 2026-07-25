@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import { DXZChatWidget } from "@/components/DXZChatWidget";
 import { validateEnvironment } from "@/lib/env-check";
 
 // Validate required env vars at startup; surfaces misconfigurations in logs.
 validateEnvironment();
-
-const spaceMono = Space_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 export const metadata: Metadata = {
   title: "DXZ Automation — AI Revenue Recovery Systems",
@@ -25,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceMono.variable} h-full antialiased`}>
+    <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[#030303] text-white">
         {children}
         <DXZChatWidget />

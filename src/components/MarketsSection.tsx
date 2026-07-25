@@ -24,7 +24,7 @@ export function MarketsSection() {
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-4">
             Who We Work With
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
+          <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
             <span className="block">If a missed call costs you money,</span>
             <span className="mt-3 block italic text-zinc-600">DXZ Automation is for you.</span>
           </h2>
@@ -48,8 +48,8 @@ export function MarketsSection() {
                   {pain}
                 </span>
               </div>
-              <h3 className="font-serif text-xl font-bold text-white mb-2">{vertical}</h3>
-              <p className="font-sans text-sm text-zinc-600">{dollar}</p>
+              <h3 className="font-mono text-xl font-bold text-white mb-2">{vertical}</h3>
+              <p className="font-mono text-sm text-zinc-600">{dollar}</p>
             </motion.div>
           ))}
 
@@ -69,7 +69,7 @@ export function MarketsSection() {
               Not sure if you qualify?
             </span>
             <div>
-              <p className="font-serif text-xl font-bold text-white leading-snug">
+              <p className="font-mono text-xl font-bold text-white leading-snug">
                 What&apos;s a missed call worth to you?
               </p>
               <p className="font-mono text-[10px] tracking-widest uppercase text-red-200 mt-3 group-hover:translate-x-1 transition-transform">

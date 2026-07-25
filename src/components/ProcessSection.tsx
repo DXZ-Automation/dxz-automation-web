@@ -15,7 +15,7 @@ export function ProcessSection() {
   return (
     <section id="process" className="relative overflow-hidden bg-[#030303] px-6 py-20 md:py-32 lg:px-[72px]">
       {/* Background text */}
-      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 font-serif text-[clamp(8rem,20vw,18rem)] font-black text-white/[0.015] select-none leading-none">
+      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 font-mono text-[clamp(8rem,20vw,18rem)] font-black text-white/[0.015] select-none leading-none">
         7 DAYS
       </div>
 
@@ -30,7 +30,7 @@ export function ProcessSection() {
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-4">
             The Process
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
+          <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
             <span className="block">Signed to live.</span>
             <span className="mt-3 block italic text-zinc-600">Seven days.</span>
           </h2>
@@ -60,10 +60,10 @@ export function ProcessSection() {
 
                 {/* Content */}
                 <div className="flex flex-wrap items-baseline gap-4 md:pl-8">
-                  <h3 className="font-serif text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
+                  <h3 className="font-mono text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
                     {action}
                   </h3>
-                  <p className="font-sans text-sm text-zinc-600 leading-relaxed">{detail}</p>
+                  <p className="font-mono text-sm text-zinc-600 leading-relaxed">{detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -78,8 +78,8 @@ export function ProcessSection() {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <p className="font-serif text-2xl font-bold text-white">Build it once. Run it forever.</p>
-            <p className="font-sans text-sm text-zinc-600 mt-2">
+            <p className="font-mono text-2xl font-bold text-white">Build it once. Run it forever.</p>
+            <p className="font-mono text-sm text-zinc-600 mt-2">
               13–18 hours total build time. Recurring revenue from day one.
             </p>
           </div>

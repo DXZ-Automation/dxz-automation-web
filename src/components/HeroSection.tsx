@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { ShinyButton } from "@/components/ui/shiny-button";
 
 const stats = [
   { value: "$3K–$8K", label: "Recovered / month" },
@@ -144,7 +145,7 @@ export function HeroSection() {
             </motion.div>
 
             {/* Headline */}
-            <h1 className="font-serif text-[clamp(3.5rem,7vw,7.5rem)] font-black leading-[0.92] tracking-tight text-white mb-10">
+            <h1 className="font-mono text-[clamp(3.5rem,7vw,7.5rem)] font-black leading-[0.92] tracking-tight text-white mb-10">
               {headline.map((word, i) => (
                 <Word key={i} word={word} delay={0.2 + i * 0.08} />
               ))}
@@ -152,7 +153,7 @@ export function HeroSection() {
 
             {/* Sub */}
             <motion.p
-              className="font-sans text-base font-light text-zinc-500 leading-[1.8] max-w-[440px] mb-14"
+              className="font-mono text-base font-light text-zinc-500 leading-[1.8] max-w-[440px] mb-14"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.95, duration: 0.7 }}
@@ -169,18 +170,20 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.55 }}
             >
-              <a
+              <ShinyButton
+                variant="red"
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-none bg-red-600 hover:bg-red-500 text-white font-sans text-xs tracking-[0.2em] uppercase px-10 h-14 transition-colors"
+                className="font-mono text-xs tracking-[0.2em] uppercase"
               >
                 Find my revenue leak →
-              </a>
-              <a
+              </ShinyButton>
+              <ShinyButton
+                variant="grey"
                 href="#process"
-                className="inline-flex items-center justify-center rounded-none border border-white/[0.06] bg-transparent text-zinc-500 hover:border-white/[0.15] hover:text-white font-sans text-xs tracking-[0.2em] uppercase px-10 h-14 transition-all"
+                className="font-mono text-xs tracking-[0.2em] uppercase"
               >
                 See how it works
-              </a>
+              </ShinyButton>
             </motion.div>
           </div>
 
@@ -199,7 +202,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.35 + i * 0.1, duration: 0.5 }}
               >
-                <span className="font-serif text-3xl font-black text-white block mb-1.5">{value}</span>
+                <span className="font-mono text-3xl font-black text-white block mb-1.5">{value}</span>
                 <span className="font-mono text-[8px] tracking-[0.3em] uppercase text-zinc-700">{label}</span>
               </motion.div>
             ))}

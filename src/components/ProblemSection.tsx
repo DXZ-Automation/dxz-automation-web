@@ -37,7 +37,7 @@ export function ProblemSection() {
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-4">
             The Problem
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
+          <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
             <span className="block">Your business is bleeding.</span>
             <span className="mt-3 block italic text-zinc-600">You just can&apos;t see it.</span>
           </h2>
@@ -54,12 +54,12 @@ export function ProblemSection() {
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
               <div className="mb-6">
-                <span className="font-serif text-5xl font-black text-red-500">{stat}</span>
+                <span className="font-mono text-5xl font-black text-red-500">{stat}</span>
               </div>
               <p className="font-mono text-xs tracking-widest uppercase text-zinc-500 mb-3">
                 {label}
               </p>
-              <p className="font-sans text-sm text-zinc-600 leading-relaxed group-hover:text-zinc-500 transition-colors">
+              <p className="font-mono text-sm text-zinc-600 leading-relaxed group-hover:text-zinc-500 transition-colors">
                 {detail}
               </p>
             </motion.div>
@@ -73,7 +73,7 @@ export function ProblemSection() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-serif text-2xl lg:text-3xl italic text-zinc-300">
+          <p className="font-mono text-2xl lg:text-3xl italic text-zinc-300">
             &ldquo;We find the money you&apos;re already losing<br />and automate getting it back.&rdquo;
           </p>
           <p className="font-mono text-xs tracking-widest uppercase text-zinc-700 mt-4">

@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Space_Mono } from "next/font/google";
+import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import { DXZChatWidget } from "@/components/DXZChatWidget";
 import { validateEnvironment } from "@/lib/env-check";
 
 // Validate required env vars at startup; surfaces misconfigurations in logs.
 validateEnvironment();
-
-const playfair = Playfair_Display({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  style: ["normal", "italic"],
-});
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
 
 const spaceMono = Space_Mono({
   variable: "--font-mono",
@@ -38,10 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${inter.variable} ${spaceMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${spaceMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[#030303] text-white">
         {children}
         <DXZChatWidget />

@@ -105,7 +105,7 @@ export function DXZChatWidget() {
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
             <div>
               <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-zinc-400">DXZ Automation</p>
-              <p className="font-serif text-sm font-bold text-white leading-tight">Revenue Recovery</p>
+              <p className="font-mono text-sm font-bold text-white leading-tight">Revenue Recovery</p>
             </div>
             <a
               href="https://cal.com/dxz-automation"
@@ -124,8 +124,8 @@ export function DXZChatWidget() {
                 <div
                   className={`max-w-[85%] px-4 py-3 text-sm leading-relaxed ${
                     m.role === "user"
-                      ? "bg-red-600 text-white font-sans"
-                      : "bg-[#141414] text-zinc-300 font-sans border border-white/[0.05]"
+                      ? "bg-red-600 text-white font-mono"
+                      : "bg-[#141414] text-zinc-300 font-mono border border-white/[0.05]"
                   }`}
                 >
                   {m.text}
@@ -175,7 +175,7 @@ export function DXZChatWidget() {
               placeholder="Ask anything…"
               disabled={loading}
               maxLength={500}
-              className="flex-1 bg-[#141414] border border-white/[0.07] px-3 py-2 text-sm text-white placeholder:text-zinc-700 font-sans outline-none focus:border-red-600/40 transition-colors disabled:opacity-50"
+              className="flex-1 bg-[#141414] border border-white/[0.07] px-3 py-2 text-sm text-white placeholder:text-zinc-700 font-mono outline-none focus:border-red-600/40 transition-colors disabled:opacity-50"
             />
             <button
               onClick={() => send()}

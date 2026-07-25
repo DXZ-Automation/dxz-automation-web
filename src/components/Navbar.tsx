@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ShinyButton } from "@/components/ui/shiny-button";
 
 const links = ["Services", "Process", "Markets", "Contact"];
 
@@ -43,22 +44,23 @@ export function Navbar() {
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="font-sans text-xs tracking-widest uppercase text-zinc-500 hover:text-white transition-colors duration-200"
+              className="font-mono text-xs tracking-widest uppercase text-zinc-500 hover:text-white transition-colors duration-200"
             >
               {link}
             </a>
           ))}
         </nav>
 
-        <a
+        <ShinyButton
+          variant="red"
           href="https://cal.com/dxz-automation"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-8 items-center justify-center rounded-none bg-red-600 px-3 font-sans text-[10px] font-medium tracking-[0.14em] text-white uppercase transition-colors hover:bg-red-500 sm:px-5 sm:text-xs sm:tracking-widest"
+          className="!px-5 !py-2 font-mono !text-[10px] font-medium tracking-[0.14em] uppercase sm:!px-6 sm:!py-2.5 sm:!text-xs sm:tracking-widest"
         >
           <span className="sm:hidden">Book Call</span>
           <span className="hidden sm:inline">Book a Free Discovery Call</span>
-        </a>
+        </ShinyButton>
       </div>
     </motion.header>
   );

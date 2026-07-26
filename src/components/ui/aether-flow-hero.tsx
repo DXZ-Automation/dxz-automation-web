@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Zap } from "lucide-react";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { DxzLogoMark } from "@/components/ui/dxz-logo-mark";
 
 const PARTICLE_COLOR = "rgba(220, 38, 38, 0.85)";
 const LINE_COLOR_BASE = "220, 38, 38";
@@ -208,15 +208,14 @@ export function AetherFlowHero() {
           </span>
         </motion.div>
 
-        <motion.div custom={1} variants={fadeUpVariants} initial="hidden" animate="visible">
-          <Image
-            src="/dxz-logo.png"
-            alt="DXZ Automation"
-            width={748}
-            height={380}
-            priority
-            className="mx-auto h-auto w-[280px] sm:w-[380px] md:w-[520px] lg:w-[640px]"
-          />
+        <motion.div
+          custom={1}
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex justify-center"
+        >
+          <DxzLogoMark />
         </motion.div>
 
         <motion.div custom={2} variants={fadeUpVariants} initial="hidden" animate="visible" className="mt-10">

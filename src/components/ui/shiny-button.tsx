@@ -138,7 +138,7 @@ export function ShinyButton({ children, variant = "red", className = "", href, .
         .shiny-cta::after {
           --animation: shimmer linear infinite;
           width: 100%;
-          aspect-ratio: 1;
+          height: 100%;
           background: linear-gradient(
             -50deg,
             transparent,

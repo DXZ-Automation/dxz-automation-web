@@ -239,15 +239,17 @@ export function LogoWordmark({
   automationGapClassName,
   groupRef,
 }: LogoWordmarkProps) {
-  const dxzClasses = cn("font-bold leading-none text-white text-[68px] sm:text-[92px] md:text-[126px] lg:text-[155px]", dxzClassName);
-  const automationClasses = cn("font-bold leading-none text-gray-200 text-[30px] sm:text-[41px] md:text-[56px] lg:text-[70px]", automationClassName);
+  const dxzGlow = "[text-shadow:0_0_14px_rgba(231,40,40,0.65)] transition-[text-shadow] duration-300 ease-in group-hover/dxz:[text-shadow:0_0_34px_rgba(255,90,90,0.95)]";
+  const automationGlow = "[text-shadow:0_0_14px_rgba(231,40,40,0.65)] transition-[text-shadow] duration-300 ease-in group-hover/automation:[text-shadow:0_0_34px_rgba(255,90,90,0.95)]";
+  const dxzClasses = cn("font-bold leading-none text-white text-[68px] sm:text-[92px] md:text-[126px] lg:text-[155px]", dxzGlow, dxzClassName);
+  const automationClasses = cn("font-bold leading-none text-gray-200 text-[30px] sm:text-[41px] md:text-[56px] lg:text-[70px]", automationGlow, automationClassName);
 
   return (
     <div ref={groupRef} className="flex flex-col">
       <StableWidthWord
         text="DXZ"
         className={dxzClasses}
-        wrapperClassName={cn("-mb-[14px] sm:-mb-[18px] md:-mb-[24px] lg:-mb-[29.5px]", dxzGapClassName)}
+        wrapperClassName={cn("group/dxz -mb-[14px] sm:-mb-[18px] md:-mb-[24px] lg:-mb-[29.5px]", dxzGapClassName)}
       >
         <HyperText text="DXZ" className={dxzClasses} />
       </StableWidthWord>
@@ -260,7 +262,7 @@ export function LogoWordmark({
       <StableWidthWord
         text="AUTOMATION"
         className={automationClasses}
-        wrapperClassName={cn("-mt-[7px] sm:-mt-[9px] md:-mt-[12px] lg:-mt-[14px]", automationGapClassName)}
+        wrapperClassName={cn("group/automation -mt-[7px] sm:-mt-[9px] md:-mt-[12px] lg:-mt-[14px]", automationGapClassName)}
       >
         <HyperText text="AUTOMATION" className={automationClasses} />
       </StableWidthWord>

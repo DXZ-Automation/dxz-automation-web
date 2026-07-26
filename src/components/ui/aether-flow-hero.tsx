@@ -49,7 +49,7 @@ export function AetherFlowHero() {
           <ShinyButton
             variant="red"
             href="#process"
-            className="font-mono text-xs tracking-[0.2em] uppercase"
+            className="font-mono text-xs tracking-widest uppercase"
           >
             See how it works
           </ShinyButton>

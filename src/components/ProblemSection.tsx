@@ -65,21 +65,6 @@ export function ProblemSection() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="mt-16 border-l-2 border-red-600 pl-8"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="font-mono text-2xl lg:text-3xl italic text-zinc-300">
-            &ldquo;We find the money you&apos;re already losing<br />and automate getting it back.&rdquo;
-          </p>
-          <p className="font-mono text-xs tracking-widest uppercase text-zinc-700 mt-4">
-            — Zak X Daniel, DXZ Automation
-          </p>
-        </motion.div>
       </div>
     </section>
   );

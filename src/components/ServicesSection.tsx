@@ -35,7 +35,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative bg-[#030303] px-6 py-20 md:py-32 lg:px-[72px]">
+    <section id="services" className="relative px-6 py-20 md:py-32 lg:px-[72px]">
       {/* Horizontal rule */}
       <div className="mx-auto max-w-[1440px] mb-20">
         <div className="flex items-end justify-between gap-8 flex-wrap">

@@ -8,7 +8,7 @@ const NOISE =
 
 export function CTASection() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[#030303] px-6 py-20 md:py-32 lg:px-[72px]">
+    <section id="contact" className="relative overflow-hidden px-6 py-20 md:py-32 lg:px-[72px]">
       <motion.div
         className="mx-auto max-w-4xl text-center relative z-10"
         initial={{ opacity: 0, y: 30 }}

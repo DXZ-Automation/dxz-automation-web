@@ -13,7 +13,7 @@ const steps = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="relative overflow-hidden bg-[#030303] px-6 py-20 md:py-32 lg:px-[72px]">
+    <section id="process" className="relative overflow-hidden px-6 py-20 md:py-32 lg:px-[72px]">
       {/* Background text */}
       <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 font-mono text-[clamp(8rem,20vw,18rem)] font-black text-white/[0.015] select-none leading-none">
         7 DAYS

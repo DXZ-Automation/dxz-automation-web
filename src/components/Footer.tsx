@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function Footer() {
   return (
     <motion.footer
-      className="bg-[#030303] border-t border-white/[0.04] px-6 lg:px-[72px] py-12"
+      className="border-t border-white/[0.04] px-6 lg:px-[72px] py-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

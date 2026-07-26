@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { DXZChatWidget } from "@/components/DXZChatWidget";
+import { ParticleNetworkBackground } from "@/components/ui/particle-network-bg";
 import { validateEnvironment } from "@/lib/env-check";
 
 // Validate required env vars at startup; surfaces misconfigurations in logs.
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[#030303] text-white">
+        <ParticleNetworkBackground />
         {children}
         <DXZChatWidget />
       </body>

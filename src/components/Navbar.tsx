@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ShinyButton } from "@/components/ui/shiny-button";
-import { LogoIcon, LogoWordmark } from "@/components/ui/dxz-logo-mark";
+import { DxzLogo } from "@/components/ui/dxz-logo-mark";
 
 const links = ["Services", "Process", "Markets", "Contact"];
 
@@ -28,10 +28,11 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="relative mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-[72px]">
-        <a href="#" className="group flex items-center gap-1.5">
-          <LogoIcon className="w-9 shrink-0 sm:w-[53px] md:w-[53px] lg:w-[53px]" />
-          <LogoWordmark
+        <a href="#" className="group">
+          <DxzLogo
+            iconClassName="w-9 shrink-0 sm:w-[53px] md:w-[53px] lg:w-[53px]"
             dxzClassName="text-[21px] sm:text-[30px] md:text-[30px] lg:text-[30px]"
+            dxzGapClassName="-mb-[3px] sm:-mb-[4px] md:-mb-[4px] lg:-mb-[4px]"
             underlineClassName="h-[2px] sm:h-[3px] md:h-[3px] lg:h-[3px] my-0.5 sm:my-0.5 md:my-0.5 lg:my-0.5"
             automationClassName="text-[9px] sm:text-[13px] md:text-[13px] lg:text-[13px]"
           />

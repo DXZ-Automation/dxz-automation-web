@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 import { cn } from "@/lib/utils";
 import { HyperText } from "@/components/ui/hyper-text";
 
@@ -11,7 +11,17 @@ import { HyperText } from "@/components/ui/hyper-text";
  * this, the hero logo (horizontally centered) visibly jitters left/right for
  * the ~800ms the scramble runs, a measured CLS regression.
  */
-function StableWidthWord({ text, className, children }: { text: string; className?: string; children: React.ReactNode }) {
+function StableWidthWord({
+  text,
+  className,
+  wrapperClassName,
+  children,
+}: {
+  text: string;
+  className?: string;
+  wrapperClassName?: string;
+  children: React.ReactNode;
+}) {
   const measureRef = useRef<HTMLSpanElement | null>(null);
   const [width, setWidth] = useState<number>();
 
@@ -25,7 +35,7 @@ function StableWidthWord({ text, className, children }: { text: string; classNam
   }, [text, className]);
 
   return (
-    <div className="relative" style={{ width }}>
+    <div className={cn("relative", wrapperClassName)} style={{ width }}>
       <span
         ref={measureRef}
         aria-hidden="true"
@@ -71,7 +81,7 @@ export function LogoIcon({ className }: { className?: string }) {
     let hubRadius = 0;
     const mouse = { x: null as number | null, y: null as number | null };
 
-    const satelliteCount = 8;
+    const satelliteCount = 12;
     const nodes: Node[] = Array.from({ length: satelliteCount }, (_, i) => ({
       angle: (i / satelliteCount) * Math.PI * 2,
       radius: 0,
@@ -214,26 +224,35 @@ export function LogoIcon({ className }: { className?: string }) {
 
 interface LogoWordmarkProps {
   dxzClassName?: string;
+  dxzGapClassName?: string;
   underlineClassName?: string;
   automationClassName?: string;
+  barRef?: RefObject<HTMLSpanElement | null>;
 }
 
 export function LogoWordmark({
   dxzClassName,
+  dxzGapClassName,
   underlineClassName,
   automationClassName,
+  barRef,
 }: LogoWordmarkProps) {
   const dxzClasses = cn("font-bold leading-none text-white text-[68px] sm:text-[92px] md:text-[126px] lg:text-[155px]", dxzClassName);
-  const automationClasses = cn("leading-none text-gray-200 text-[30px] sm:text-[41px] md:text-[56px] lg:text-[70px]", automationClassName);
+  const automationClasses = cn("font-bold leading-none text-gray-200 text-[30px] sm:text-[41px] md:text-[56px] lg:text-[70px]", automationClassName);
 
   return (
     <div className="flex flex-col">
-      <StableWidthWord text="DXZ" className={dxzClasses}>
+      <StableWidthWord
+        text="DXZ"
+        className={dxzClasses}
+        wrapperClassName={cn("-mb-[8px] sm:-mb-[11px] md:-mb-[15px] lg:-mb-[18px]", dxzGapClassName)}
+      >
         <HyperText text="DXZ" className={dxzClasses} />
       </StableWidthWord>
       <span
+        ref={barRef}
         className={cn(
-          "my-0.5 block h-[8px] bg-[rgb(231,40,40)] transition-shadow duration-300 ease-in hover:shadow-[0_0_30px_5px_rgba(231,40,40,0.6)] sm:h-[10px] md:h-[13px] lg:h-[15px]",
+          "my-0.5 block h-[8px] bg-[rgb(231,40,40)] shadow-[0_0_10px_2px_rgba(231,40,40,0.35)] transition-shadow duration-300 ease-in hover:shadow-[0_0_30px_5px_rgba(231,40,40,0.75)] sm:h-[10px] md:h-[13px] lg:h-[15px]",
           underlineClassName
         )}
       />
@@ -244,11 +263,55 @@ export function LogoWordmark({
   );
 }
 
-export function DxzLogoMark() {
+interface DxzLogoProps {
+  iconClassName?: string;
+  dxzClassName?: string;
+  dxzGapClassName?: string;
+  underlineClassName?: string;
+  automationClassName?: string;
+  gapClassName?: string;
+}
+
+/** Icon + wordmark, with the icon's hub vertically centered on the red underline bar
+ *  (measured, not eyeballed, since the bar's position shifts with responsive text sizes). */
+export function DxzLogo({ iconClassName, dxzClassName, dxzGapClassName, underlineClassName, automationClassName, gapClassName }: DxzLogoProps) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const iconWrapRef = useRef<HTMLDivElement | null>(null);
+  const barRef = useRef<HTMLSpanElement | null>(null);
+  const [iconMarginTop, setIconMarginTop] = useState(0);
+
+  useEffect(() => {
+    const align = () => {
+      const container = containerRef.current;
+      const iconWrap = iconWrapRef.current;
+      const bar = barRef.current;
+      if (!container || !iconWrap || !bar) return;
+      const containerTop = container.getBoundingClientRect().top;
+      const barRect = bar.getBoundingClientRect();
+      const barCenterY = barRect.top + barRect.height / 2 - containerTop;
+      setIconMarginTop(barCenterY - iconWrap.getBoundingClientRect().height / 2);
+    };
+    align();
+    window.addEventListener("resize", align);
+    return () => window.removeEventListener("resize", align);
+  }, []);
+
   return (
-    <div className="inline-flex items-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-2.5">
-      <LogoIcon />
-      <LogoWordmark />
+    <div ref={containerRef} className={cn("inline-flex items-start gap-1 sm:gap-1.5 md:gap-2 lg:gap-2.5", gapClassName)}>
+      <div ref={iconWrapRef} style={{ marginTop: iconMarginTop }}>
+        <LogoIcon className={iconClassName} />
+      </div>
+      <LogoWordmark
+        dxzClassName={dxzClassName}
+        dxzGapClassName={dxzGapClassName}
+        underlineClassName={underlineClassName}
+        automationClassName={automationClassName}
+        barRef={barRef}
+      />
     </div>
   );
+}
+
+export function DxzLogoMark() {
+  return <DxzLogo />;
 }

@@ -227,7 +227,8 @@ interface LogoWordmarkProps {
   dxzGapClassName?: string;
   underlineClassName?: string;
   automationClassName?: string;
-  barRef?: RefObject<HTMLSpanElement | null>;
+  automationGapClassName?: string;
+  groupRef?: RefObject<HTMLDivElement | null>;
 }
 
 export function LogoWordmark({
@@ -235,28 +236,32 @@ export function LogoWordmark({
   dxzGapClassName,
   underlineClassName,
   automationClassName,
-  barRef,
+  automationGapClassName,
+  groupRef,
 }: LogoWordmarkProps) {
   const dxzClasses = cn("font-bold leading-none text-white text-[68px] sm:text-[92px] md:text-[126px] lg:text-[155px]", dxzClassName);
   const automationClasses = cn("font-bold leading-none text-gray-200 text-[30px] sm:text-[41px] md:text-[56px] lg:text-[70px]", automationClassName);
 
   return (
-    <div className="flex flex-col">
+    <div ref={groupRef} className="flex flex-col">
       <StableWidthWord
         text="DXZ"
         className={dxzClasses}
-        wrapperClassName={cn("-mb-[8px] sm:-mb-[11px] md:-mb-[15px] lg:-mb-[18px]", dxzGapClassName)}
+        wrapperClassName={cn("-mb-[14px] sm:-mb-[18px] md:-mb-[24px] lg:-mb-[29.5px]", dxzGapClassName)}
       >
         <HyperText text="DXZ" className={dxzClasses} />
       </StableWidthWord>
       <span
-        ref={barRef}
         className={cn(
-          "my-0.5 block h-[8px] bg-[rgb(231,40,40)] shadow-[0_0_10px_2px_rgba(231,40,40,0.35)] transition-shadow duration-300 ease-in hover:shadow-[0_0_30px_5px_rgba(231,40,40,0.75)] sm:h-[10px] md:h-[13px] lg:h-[15px]",
+          "my-0.5 block h-[8px] bg-[rgb(231,40,40)] shadow-[0_0_14px_3px_rgba(231,40,40,0.65)] transition-shadow duration-300 ease-in hover:shadow-[0_0_34px_6px_rgba(255,90,90,0.95)] sm:h-[10px] md:h-[13px] lg:h-[15px]",
           underlineClassName
         )}
       />
-      <StableWidthWord text="AUTOMATION" className={automationClasses}>
+      <StableWidthWord
+        text="AUTOMATION"
+        className={automationClasses}
+        wrapperClassName={cn("-mt-[7px] sm:-mt-[9px] md:-mt-[12px] lg:-mt-[14px]", automationGapClassName)}
+      >
         <HyperText text="AUTOMATION" className={automationClasses} />
       </StableWidthWord>
     </div>
@@ -269,27 +274,28 @@ interface DxzLogoProps {
   dxzGapClassName?: string;
   underlineClassName?: string;
   automationClassName?: string;
+  automationGapClassName?: string;
   gapClassName?: string;
 }
 
-/** Icon + wordmark, with the icon's hub vertically centered on the red underline bar
- *  (measured, not eyeballed, since the bar's position shifts with responsive text sizes). */
-export function DxzLogo({ iconClassName, dxzClassName, dxzGapClassName, underlineClassName, automationClassName, gapClassName }: DxzLogoProps) {
+/** Icon + wordmark, with the icon's hub vertically centered on the whole DXZ/bar/AUTOMATION
+ *  group (measured, not eyeballed, since the group's height shifts with responsive text sizes). */
+export function DxzLogo({ iconClassName, dxzClassName, dxzGapClassName, underlineClassName, automationClassName, automationGapClassName, gapClassName }: DxzLogoProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const iconWrapRef = useRef<HTMLDivElement | null>(null);
-  const barRef = useRef<HTMLSpanElement | null>(null);
+  const groupRef = useRef<HTMLDivElement | null>(null);
   const [iconMarginTop, setIconMarginTop] = useState(0);
 
   useEffect(() => {
     const align = () => {
       const container = containerRef.current;
       const iconWrap = iconWrapRef.current;
-      const bar = barRef.current;
-      if (!container || !iconWrap || !bar) return;
+      const group = groupRef.current;
+      if (!container || !iconWrap || !group) return;
       const containerTop = container.getBoundingClientRect().top;
-      const barRect = bar.getBoundingClientRect();
-      const barCenterY = barRect.top + barRect.height / 2 - containerTop;
-      setIconMarginTop(barCenterY - iconWrap.getBoundingClientRect().height / 2);
+      const groupRect = group.getBoundingClientRect();
+      const groupCenterY = groupRect.top + groupRect.height / 2 - containerTop;
+      setIconMarginTop(groupCenterY - iconWrap.getBoundingClientRect().height / 2);
     };
     align();
     window.addEventListener("resize", align);
@@ -306,7 +312,8 @@ export function DxzLogo({ iconClassName, dxzClassName, dxzGapClassName, underlin
         dxzGapClassName={dxzGapClassName}
         underlineClassName={underlineClassName}
         automationClassName={automationClassName}
-        barRef={barRef}
+        automationGapClassName={automationGapClassName}
+        groupRef={groupRef}
       />
     </div>
   );

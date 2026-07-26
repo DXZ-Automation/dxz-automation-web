@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { DxzLogo } from "@/components/ui/dxz-logo-mark";
 
-const links = ["Services", "Process", "Markets", "Contact"];
+const links = ["Services", "Process", "Contact"];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,9 +32,10 @@ export function Navbar() {
           <DxzLogo
             iconClassName="w-9 shrink-0 sm:w-[53px] md:w-[53px] lg:w-[53px]"
             dxzClassName="text-[21px] sm:text-[30px] md:text-[30px] lg:text-[30px]"
-            dxzGapClassName="-mb-[3px] sm:-mb-[4px] md:-mb-[4px] lg:-mb-[4px]"
+            dxzGapClassName="-mb-[6.5px] sm:-mb-[7px] md:-mb-[7px] lg:-mb-[7px]"
             underlineClassName="h-[2px] sm:h-[3px] md:h-[3px] lg:h-[3px] my-0.5 sm:my-0.5 md:my-0.5 lg:my-0.5"
             automationClassName="text-[9px] sm:text-[13px] md:text-[13px] lg:text-[13px]"
+            automationGapClassName="-mt-[3px] sm:-mt-[4px] md:-mt-[4px] lg:-mt-[4px]"
           />
         </a>
 

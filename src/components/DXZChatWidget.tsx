@@ -76,7 +76,7 @@ export function DXZChatWidget() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Ask DXZ Automation"}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-red-600 hover:bg-red-500 active:bg-red-700 transition-colors duration-200 shadow-[0_0_24px_rgba(220,38,38,0.5)] flex items-center justify-center group"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-red-600 hover:bg-red-500 active:bg-red-700 shadow-[0_0_14px_3px_rgba(231,40,40,0.65)] transition-[background-color,box-shadow] duration-300 ease-in hover:shadow-[0_0_34px_6px_rgba(255,90,90,0.95)] flex items-center justify-center group"
       >
         {open ? (
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-white">

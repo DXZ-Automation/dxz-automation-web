@@ -232,8 +232,10 @@ export function LogoWordmark({
         <HyperText text="DXZ" className={dxzClasses} />
       </StableWidthWord>
       <span
-        className={cn("my-1.5 block bg-[rgb(231,40,40)] sm:my-2 md:my-2.5", underlineClassName)}
-        style={{ height: "clamp(7px, 2.3vw, 15px)" }}
+        className={cn(
+          "my-0.5 block h-[8px] bg-[rgb(231,40,40)] transition-shadow duration-300 ease-in hover:shadow-[0_0_30px_5px_rgba(231,40,40,0.6)] sm:h-[10px] md:h-[13px] lg:h-[15px]",
+          underlineClassName
+        )}
       />
       <StableWidthWord text="AUTOMATION" className={automationClasses}>
         <HyperText text="AUTOMATION" className={automationClasses} />

@@ -1,6 +1,42 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
+import { HyperText } from "@/components/ui/hyper-text";
+
+/**
+ * Reserves the settled text's natural rendered width so the letter-scramble
+ * animation (which cycles through glyphs of varying advance width, since the
+ * site font isn't monospace) can't reflow the surrounding layout — without
+ * this, the hero logo (horizontally centered) visibly jitters left/right for
+ * the ~800ms the scramble runs, a measured CLS regression.
+ */
+function StableWidthWord({ text, className, children }: { text: string; className?: string; children: React.ReactNode }) {
+  const measureRef = useRef<HTMLSpanElement | null>(null);
+  const [width, setWidth] = useState<number>();
+
+  useEffect(() => {
+    const el = measureRef.current;
+    if (!el) return;
+    const update = () => setWidth(el.getBoundingClientRect().width);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [text, className]);
+
+  return (
+    <div className="relative" style={{ width }}>
+      <span
+        ref={measureRef}
+        aria-hidden="true"
+        className={cn("invisible absolute top-0 left-0 whitespace-nowrap", className)}
+      >
+        {text}
+      </span>
+      {children}
+    </div>
+  );
+}
 
 /** Exact red sampled from the source dxz-logo.png icon (rgb 231,40,40) — intentionally
  *  distinct from the site's brand red (#dc2626) used in the hero background. */
@@ -15,7 +51,7 @@ interface Node {
   size: number;
 }
 
-function LogoIcon() {
+export function LogoIcon({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -166,29 +202,51 @@ function LogoIcon() {
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[315/350] w-[118px] shrink-0 sm:w-[160px] md:w-[219px] lg:w-[269px]"
+      className={cn(
+        "relative aspect-[315/350] w-[118px] shrink-0 sm:w-[160px] md:w-[219px] lg:w-[269px]",
+        className
+      )}
     >
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
     </div>
   );
 }
 
+interface LogoWordmarkProps {
+  dxzClassName?: string;
+  underlineClassName?: string;
+  automationClassName?: string;
+}
+
+export function LogoWordmark({
+  dxzClassName,
+  underlineClassName,
+  automationClassName,
+}: LogoWordmarkProps) {
+  const dxzClasses = cn("font-bold leading-none text-white text-[68px] sm:text-[92px] md:text-[126px] lg:text-[155px]", dxzClassName);
+  const automationClasses = cn("leading-none text-gray-200 text-[30px] sm:text-[41px] md:text-[56px] lg:text-[70px]", automationClassName);
+
+  return (
+    <div className="flex flex-col">
+      <StableWidthWord text="DXZ" className={dxzClasses}>
+        <HyperText text="DXZ" className={dxzClasses} />
+      </StableWidthWord>
+      <span
+        className={cn("my-1.5 block bg-[rgb(231,40,40)] sm:my-2 md:my-2.5", underlineClassName)}
+        style={{ height: "clamp(7px, 2.3vw, 15px)" }}
+      />
+      <StableWidthWord text="AUTOMATION" className={automationClasses}>
+        <HyperText text="AUTOMATION" className={automationClasses} />
+      </StableWidthWord>
+    </div>
+  );
+}
+
 export function DxzLogoMark() {
   return (
-    <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+    <div className="inline-flex items-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-2.5">
       <LogoIcon />
-      <div className="flex flex-col">
-        <span className="font-mono font-bold leading-none text-white text-[68px] sm:text-[92px] md:text-[126px] lg:text-[155px]">
-          DXZ
-        </span>
-        <span
-          className="my-1.5 block bg-[rgb(231,40,40)] sm:my-2 md:my-2.5"
-          style={{ height: "clamp(7px, 2.3vw, 15px)" }}
-        />
-        <span className="font-mono leading-none text-gray-200 text-[30px] sm:text-[41px] md:text-[56px] lg:text-[70px]">
-          Automation
-        </span>
-      </div>
+      <LogoWordmark />
     </div>
   );
 }

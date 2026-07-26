@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { LogoIcon, LogoWordmark } from "@/components/ui/dxz-logo-mark";
 
 const links = ["Services", "Process", "Markets", "Contact"];
 
@@ -27,19 +27,17 @@ export function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-[72px]">
-        <a href="#" className="group flex items-center">
-          <Image
-            src="/dxz-logo.png"
-            alt="DXZ Automation"
-            width={748}
-            height={380}
-            priority
-            className="h-11 w-auto max-w-[180px] object-contain sm:h-16 sm:max-w-[300px] lg:max-w-[340px]"
+      <div className="relative mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-[72px]">
+        <a href="#" className="group flex items-center gap-1.5">
+          <LogoIcon className="w-9 shrink-0 sm:w-[53px] md:w-[53px] lg:w-[53px]" />
+          <LogoWordmark
+            dxzClassName="text-[21px] sm:text-[30px] md:text-[30px] lg:text-[30px]"
+            underlineClassName="h-[2px] sm:h-[3px] md:h-[3px] lg:h-[3px] my-0.5 sm:my-0.5 md:my-0.5 lg:my-0.5"
+            automationClassName="text-[9px] sm:text-[13px] md:text-[13px] lg:text-[13px]"
           />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
           {links.map((link) => (
             <a
               key={link}

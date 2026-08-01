@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { RedFrameCorners } from "@/components/ui/red-frame-corners";
 
 const steps = [
   { day: "Day 0", action: "Close", detail: "Welcome email, client folder, onboarding questionnaire sent." },
@@ -31,7 +32,7 @@ export function ProcessSection() {
             The Process
           </p>
           <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
-            <span className="block">Signed to live.</span>
+            <span className="dxz-text-glow block">Signed to live.</span>
             <span className="mt-3 block italic text-zinc-600">Seven days.</span>
           </h2>
         </motion.div>
@@ -55,12 +56,12 @@ export function ProcessSection() {
                   <div className="relative hidden md:flex h-7 w-7 items-center justify-center">
                     <div className="h-1.5 w-1.5 rounded-full bg-red-600 group-hover:scale-150 transition-transform duration-300" />
                   </div>
-                  <span className="font-mono text-[10px] tracking-widest uppercase text-zinc-700">{day}</span>
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-red-600">{day}</span>
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-wrap items-baseline gap-4 md:pl-8">
-                  <h3 className="font-mono text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
+                  <h3 className="dxz-text-glow font-mono text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
                     {action}
                   </h3>
                   <p className="font-mono text-sm text-zinc-600 leading-relaxed">{detail}</p>
@@ -71,14 +72,15 @@ export function ProcessSection() {
         </div>
 
         <motion.div
-          className="mt-16 p-10 border border-white/[0.04] bg-[#080808] flex flex-wrap gap-10 items-center justify-between"
+          className="group relative mt-16 p-10 bg-[#080808] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-shadow duration-300 flex flex-wrap gap-10 items-center justify-between"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <RedFrameCorners />
           <div>
-            <p className="font-mono text-2xl font-bold text-white">Build it once. Run it forever.</p>
+            <p className="dxz-text-glow font-mono text-2xl font-bold text-white">Build it once. Run it forever.</p>
             <p className="font-mono text-sm text-zinc-600 mt-2">
               13–18 hours total build time. Recurring revenue from day one.
             </p>

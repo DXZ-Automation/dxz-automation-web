@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { RedFrameCorners } from "@/components/ui/red-frame-corners";
 
 const problems = [
   {
@@ -38,25 +39,26 @@ export function ProblemSection() {
             The Problem
           </p>
           <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
-            <span className="block">Your business is bleeding.</span>
+            <span className="dxz-text-glow block">Your business is bleeding.</span>
             <span className="mt-3 block italic text-zinc-600">You just can&apos;t see it.</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.04]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {problems.map(({ stat, label, detail }, i) => (
             <motion.div
               key={stat}
-              className="bg-[#030303] p-10 group hover:bg-red-950/[0.03] transition-colors duration-300 border-l-2 border-transparent hover:border-red-600"
+              className="group relative bg-[#030303] p-10 hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
+              <RedFrameCorners />
               <div className="mb-6">
-                <span className="font-mono text-5xl font-black text-red-500">{stat}</span>
+                <span className="dxz-text-glow font-mono text-5xl font-black text-white">{stat}</span>
               </div>
-              <p className="font-mono text-xs tracking-widest uppercase text-zinc-500 mb-3">
+              <p className="font-mono text-xs tracking-widest uppercase text-red-500 mb-3">
                 {label}
               </p>
               <p className="font-mono text-sm text-zinc-600 leading-relaxed group-hover:text-zinc-500 transition-colors">

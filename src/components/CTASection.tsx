@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlowButton } from "@/components/ui/glow-button";
 
 const NOISE =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E\")";
@@ -62,7 +62,7 @@ export function CTASection() {
             Start Here
           </p>
 
-          <h2 className="mb-6 font-mono text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.12]">
+          <h2 className="dxz-text-glow mb-6 font-mono text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.12]">
             <span className="block">Find out exactly</span>
             <span className="mt-3 block italic">how much you&apos;re losing.</span>
           </h2>
@@ -72,7 +72,7 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ShinyButton
+            <GlowButton
               variant="red"
               href="https://cal.com/dxz-automation"
               target="_blank"
@@ -80,10 +80,10 @@ export function CTASection() {
               className="font-mono text-xs tracking-widest uppercase"
             >
               Book a free discovery call
-            </ShinyButton>
+            </GlowButton>
           </div>
 
-          <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-700 mt-8">
+          <p className="font-mono text-[10px] tracking-widest uppercase text-red-500 mt-8">
             — Daniel X Zak / DXZ Automation · AI Revenue Recovery Systems
           </p>
         </div>

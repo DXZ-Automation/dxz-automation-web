@@ -14,10 +14,10 @@ export function Footer() {
       <div className="mx-auto max-w-[1440px] flex flex-wrap items-center justify-between gap-6 px-0 lg:px-0">
         <div className="flex items-center gap-2.5">
           <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
-          <span className="font-mono text-xs font-bold tracking-[0.2em] text-zinc-600 uppercase">DXZ</span>
+          <span className="font-mono text-xs font-bold tracking-[0.2em] text-red-600 uppercase">DXZ</span>
         </div>
 
-        <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-800">
+        <p className="font-mono text-[10px] tracking-widest uppercase text-red-500">
           AI Revenue Recovery Systems · {new Date().getFullYear()}
         </p>
 

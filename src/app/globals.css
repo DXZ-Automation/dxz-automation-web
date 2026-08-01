@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.dxz-text-glow {
+  box-shadow: 0 0 10px 2px rgba(231, 40, 40, 0.35);
+  transition: box-shadow 300ms ease-in;
+}
+.dxz-text-glow:hover {
+  box-shadow: 0 0 30px 5px rgba(231, 40, 40, 0.75);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

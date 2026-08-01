@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlowButton } from "@/components/ui/glow-button";
 import { DxzLogo } from "@/components/ui/dxz-logo-mark";
 
 const links = ["Services", "Process", "Contact"];
@@ -51,7 +51,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <ShinyButton
+        <GlowButton
           variant="red"
           href="https://cal.com/dxz-automation"
           target="_blank"
@@ -60,7 +60,7 @@ export function Navbar() {
         >
           <span className="sm:hidden">Book Call</span>
           <span className="hidden sm:inline">Book a Free Discovery Call</span>
-        </ShinyButton>
+        </GlowButton>
       </div>
     </motion.header>
   );

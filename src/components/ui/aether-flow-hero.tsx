@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Zap } from "lucide-react";
-import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlowButton } from "@/components/ui/glow-button";
 import { DxzLogoMark } from "@/components/ui/dxz-logo-mark";
 
 const fadeUpVariants = {
@@ -46,13 +46,13 @@ export function AetherFlowHero() {
         </motion.div>
 
         <motion.div custom={2} variants={fadeUpVariants} initial="hidden" animate="visible" className="mt-10">
-          <ShinyButton
+          <GlowButton
             variant="red"
             href="#process"
             className="font-mono text-xs tracking-widest uppercase"
           >
             See how it works
-          </ShinyButton>
+          </GlowButton>
         </motion.div>
       </div>
     </div>

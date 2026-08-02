@@ -73,7 +73,7 @@ export function ServicesSection() {
         {services.map(({ name, recovery, time, description }, i) => (
           <motion.div
             key={name}
-            className="group relative bg-[#030303] hover:bg-[#0c0c0c] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-500 p-10 lg:p-14"
+            className="group relative bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 p-10 lg:p-14"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -111,7 +111,7 @@ export function ServicesSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="group relative bg-red-950/10 shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-shadow duration-300 p-10 lg:p-14">
+        <div className="group relative bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 p-10 lg:p-14">
           <RedFrameCorners />
 
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-2">Ongoing Partnership</p>

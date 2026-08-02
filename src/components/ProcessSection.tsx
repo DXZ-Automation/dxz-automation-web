@@ -72,7 +72,7 @@ export function ProcessSection() {
         </div>
 
         <motion.div
-          className="group relative mt-16 p-10 bg-[#080808] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-shadow duration-300 flex flex-wrap gap-10 items-center justify-between"
+          className="group relative mt-16 p-10 bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 flex flex-wrap gap-10 items-center justify-between"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

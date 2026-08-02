@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { RedFrameCorners } from "@/components/ui/red-frame-corners";
 
 const services = [
   {
@@ -72,12 +73,14 @@ export function ServicesSection() {
         {services.map(({ name, recovery, time, description }, i) => (
           <motion.div
             key={name}
-            className="group relative overflow-hidden bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 p-10 lg:p-14"
+            className="group relative bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 p-10 lg:p-14"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
           >
+            <RedFrameCorners />
+
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-start">
               {/* Content */}
               <div className="space-y-4">
@@ -108,7 +111,9 @@ export function ServicesSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="group relative overflow-hidden bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 p-10 lg:p-14">
+        <div className="group relative bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 p-10 lg:p-14">
+          <RedFrameCorners />
+
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-2">Ongoing Partnership</p>
           <h3 className="font-mono text-2xl lg:text-3xl font-bold text-white">AI Growth Partner</h3>
           <p className="font-mono text-sm text-zinc-500 mt-2 max-w-lg">

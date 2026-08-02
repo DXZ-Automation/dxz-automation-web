@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { RedFrameCorners } from "@/components/ui/red-frame-corners";
 
 const problems = [
   {
@@ -47,12 +48,13 @@ export function ProblemSection() {
           {problems.map(({ stat, label, detail }, i) => (
             <motion.div
               key={stat}
-              className="group relative overflow-hidden bg-[#030303] p-10 hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300"
+              className="group relative bg-[#030303] p-10 hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
+              <RedFrameCorners />
               <div className="mb-6">
                 <span className="font-mono text-5xl font-black text-white">{stat}</span>
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { RedFrameCorners } from "@/components/ui/red-frame-corners";
 
 const steps = [
   { day: "Day 0", action: "Close", detail: "Welcome email, client folder, onboarding questionnaire sent." },
@@ -71,12 +72,13 @@ export function ProcessSection() {
         </div>
 
         <motion.div
-          className="group relative overflow-hidden mt-16 p-10 bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 flex flex-wrap gap-10 items-center justify-between"
+          className="group relative mt-16 p-10 bg-[#030303] hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300 flex flex-wrap gap-10 items-center justify-between"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <RedFrameCorners />
           <div>
             <p className="font-mono text-2xl font-bold text-white">Build it once. Run it forever.</p>
             <p className="font-mono text-sm text-zinc-600 mt-2">

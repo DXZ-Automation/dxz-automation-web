@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GlowButton } from "@/components/ui/glow-button";
+import { RedFrameCorners } from "@/components/ui/red-frame-corners";
 
 const NOISE =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E\")";
@@ -16,38 +17,8 @@ export function CTASection() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="animated-gradient-border relative overflow-hidden p-8 sm:p-12 lg:p-24">
-          <style jsx>{`
-            @property --border-angle {
-              syntax: "<angle>";
-              initial-value: 0deg;
-              inherits: false;
-            }
-
-            .animated-gradient-border {
-              border: 1px solid transparent;
-              background:
-                linear-gradient(#060606, #060606) padding-box,
-                conic-gradient(
-                  from var(--border-angle),
-                  transparent 0%,
-                  #dc2626 10%,
-                  #f87171 20%,
-                  transparent 35%,
-                  transparent 65%,
-                  #dc2626 80%,
-                  #f87171 90%,
-                  transparent 100%
-                ) border-box;
-              animation: border-rotate 6s linear infinite;
-            }
-
-            @keyframes border-rotate {
-              to {
-                --border-angle: 360deg;
-              }
-            }
-          `}</style>
+        <div className="group relative overflow-hidden bg-[#030303] p-8 sm:p-12 lg:p-24 hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300">
+          <RedFrameCorners />
 
           {/* Noise overlay */}
           <div

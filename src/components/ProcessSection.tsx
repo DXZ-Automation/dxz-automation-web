@@ -32,8 +32,8 @@ export function ProcessSection() {
             The Process
           </p>
           <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
-            <span className="dxz-text-glow block">Signed to live.</span>
-            <span className="dxz-text-glow mt-3 block italic text-white">Seven days.</span>
+            <span className="block">Signed to live.</span>
+            <span className="mt-3 block italic text-white">Seven days.</span>
           </h2>
         </motion.div>
 
@@ -61,7 +61,7 @@ export function ProcessSection() {
 
                 {/* Content */}
                 <div className="flex flex-wrap items-baseline gap-4 md:pl-8">
-                  <h3 className="dxz-text-glow font-mono text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
+                  <h3 className="font-mono text-xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
                     {action}
                   </h3>
                   <p className="font-mono text-sm text-zinc-600 leading-relaxed">{detail}</p>
@@ -80,7 +80,7 @@ export function ProcessSection() {
         >
           <RedFrameCorners />
           <div>
-            <p className="dxz-text-glow font-mono text-2xl font-bold text-white">Build it once. Run it forever.</p>
+            <p className="font-mono text-2xl font-bold text-white">Build it once. Run it forever.</p>
             <p className="font-mono text-sm text-zinc-600 mt-2">
               13–18 hours total build time. Recurring revenue from day one.
             </p>

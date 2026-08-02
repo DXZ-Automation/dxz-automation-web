@@ -39,8 +39,8 @@ export function ProblemSection() {
             The Problem
           </p>
           <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
-            <span className="dxz-text-glow block">Your business is bleeding.</span>
-            <span className="dxz-text-glow mt-3 block italic text-white">You just can&apos;t see it.</span>
+            <span className="block">Your business is bleeding.</span>
+            <span className="mt-3 block italic text-white">You just can&apos;t see it.</span>
           </h2>
         </motion.div>
 
@@ -56,7 +56,7 @@ export function ProblemSection() {
             >
               <RedFrameCorners />
               <div className="mb-6">
-                <span className="dxz-text-glow font-mono text-5xl font-black text-white">{stat}</span>
+                <span className="font-mono text-5xl font-black text-white">{stat}</span>
               </div>
               <p className="font-mono text-xs tracking-widest uppercase text-red-500 mb-3">
                 {label}

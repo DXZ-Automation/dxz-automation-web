@@ -50,8 +50,8 @@ export function ServicesSection() {
               Revenue Recovery Systems
             </p>
             <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
-              <span className="dxz-text-glow block">Three systems.</span>
-              <span className="dxz-text-glow mt-3 block italic">Together or alone.</span>
+              <span className="block">Three systems.</span>
+              <span className="mt-3 block italic">Together or alone.</span>
             </h2>
           </motion.div>
 
@@ -63,7 +63,7 @@ export function ServicesSection() {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             <p className="font-mono text-xs text-zinc-600 tracking-widest uppercase">Full deployment</p>
-            <p className="dxz-text-glow font-mono text-4xl font-black text-white mt-1">13–18 hrs</p>
+            <p className="font-mono text-4xl font-black text-white mt-1">13–18 hrs</p>
             <p className="font-mono text-xs text-zinc-700 tracking-widest uppercase mt-1">all three systems, built</p>
           </motion.div>
         </div>
@@ -85,7 +85,7 @@ export function ServicesSection() {
               {/* Content */}
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-4">
-                  <h3 className="dxz-text-glow font-mono text-2xl lg:text-3xl font-bold text-white">{name}</h3>
+                  <h3 className="font-mono text-2xl lg:text-3xl font-bold text-white">{name}</h3>
                   <span className="font-mono text-[10px] tracking-widest uppercase text-red-500 border border-red-600/30 px-2 py-0.5">
                     {recovery}
                   </span>
@@ -95,7 +95,7 @@ export function ServicesSection() {
 
               {/* Time to build */}
               <div className="text-right lg:text-right">
-                <p className="dxz-text-glow font-mono text-2xl lg:text-3xl font-bold text-white">{time}</p>
+                <p className="font-mono text-2xl lg:text-3xl font-bold text-white">{time}</p>
                 <p className="font-mono text-[10px] tracking-widest uppercase text-red-500 mt-1">Build time</p>
               </div>
             </div>
@@ -115,7 +115,7 @@ export function ServicesSection() {
           <RedFrameCorners />
 
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-2">Ongoing Partnership</p>
-          <h3 className="dxz-text-glow font-mono text-2xl lg:text-3xl font-bold text-white">AI Growth Partner</h3>
+          <h3 className="font-mono text-2xl lg:text-3xl font-bold text-white">AI Growth Partner</h3>
           <p className="font-mono text-sm text-zinc-500 mt-2 max-w-lg">
             Continuous automation builds, optimization, and expansion. We run your revenue infrastructure so you don&apos;t have to think about it.
           </p>

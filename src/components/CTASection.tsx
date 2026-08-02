@@ -26,14 +26,11 @@ export function CTASection() {
             style={{ backgroundImage: NOISE, backgroundRepeat: "repeat", backgroundSize: "200px 200px" }}
           />
 
-          {/* Red glow */}
-          <div className="pointer-events-none absolute inset-0 bg-red-700/5" />
-
           <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-8">
             Start Here
           </p>
 
-          <h2 className="dxz-text-glow mb-6 font-mono text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.12]">
+          <h2 className="mb-6 font-mono text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.12]">
             <span className="block">Find out exactly</span>
             <span className="mt-3 block italic">how much you&apos;re losing.</span>
           </h2>

@@ -26,7 +26,7 @@ export function CTASection() {
             style={{ backgroundImage: NOISE, backgroundRepeat: "repeat", backgroundSize: "200px 200px" }}
           />
 
-          <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-8">
+          <p className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 backdrop-blur-sm font-mono text-sm font-medium text-gray-200 mb-8">
             Start Here
           </p>
 

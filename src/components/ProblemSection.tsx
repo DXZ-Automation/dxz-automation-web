@@ -35,7 +35,7 @@ export function ProblemSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-red-500 mb-4">
+          <p className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 backdrop-blur-sm font-mono text-sm font-medium text-gray-200 mb-4">
             The Problem
           </p>
           <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">

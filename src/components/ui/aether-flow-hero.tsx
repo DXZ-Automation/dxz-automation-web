@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
 import { GlowButton } from "@/components/ui/glow-button";
 import { DxzLogoMark } from "@/components/ui/dxz-logo-mark";
 
@@ -27,9 +26,8 @@ export function AetherFlowHero() {
           variants={fadeUpVariants}
           initial="hidden"
           animate="visible"
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 mb-6 backdrop-blur-sm"
+          className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 mb-6 backdrop-blur-sm"
         >
-          <Zap className="h-4 w-4 text-red-500" />
           <span className="font-mono text-sm font-medium text-gray-200">
             AI Revenue Recovery Systems
           </span>

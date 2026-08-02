@@ -33,7 +33,7 @@ export function ProcessSection() {
           </p>
           <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
             <span className="dxz-text-glow block">Signed to live.</span>
-            <span className="mt-3 block italic text-zinc-600">Seven days.</span>
+            <span className="dxz-text-glow mt-3 block italic text-white">Seven days.</span>
           </h2>
         </motion.div>
 

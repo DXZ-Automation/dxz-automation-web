@@ -40,7 +40,7 @@ export function ProblemSection() {
           </p>
           <h2 className="font-mono text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.12]">
             <span className="dxz-text-glow block">Your business is bleeding.</span>
-            <span className="mt-3 block italic text-zinc-600">You just can&apos;t see it.</span>
+            <span className="dxz-text-glow mt-3 block italic text-white">You just can&apos;t see it.</span>
           </h2>
         </motion.div>
 

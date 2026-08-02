@@ -21,7 +21,7 @@ export function Footer() {
           AI Revenue Recovery Systems · {new Date().getFullYear()}
         </p>
 
-        <p className="font-mono text-[10px] tracking-widest uppercase text-zinc-800">
+        <p className="font-mono text-[10px] tracking-widest uppercase text-red-500">
           Built by Daniel X Zak
         </p>
       </div>

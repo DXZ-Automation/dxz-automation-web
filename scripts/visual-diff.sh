@@ -11,9 +11,9 @@ if [ ! -f "$CONFIG" ]; then
   exit 1
 fi
 
-PORT=$(node -e "console.log(new URL(JSON.parse(require('fs').readFileSync('$CONFIG','utf8')).baseURL).port)")
-DEV_COMMAND=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$CONFIG','utf8')).devCommand)")
-READY_TIMEOUT_MS=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$CONFIG','utf8')).readyTimeoutMs || 30000)")
+PORT=$(CONFIG_PATH="$CONFIG" node -e "console.log(new URL(JSON.parse(require('fs').readFileSync(process.env.CONFIG_PATH,'utf8')).baseURL).port)")
+DEV_COMMAND=$(CONFIG_PATH="$CONFIG" node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.CONFIG_PATH,'utf8')).devCommand)")
+READY_TIMEOUT_MS=$(CONFIG_PATH="$CONFIG" node -e "console.log(JSON.parse(require('fs').readFileSync(process.env.CONFIG_PATH,'utf8')).readyTimeoutMs || 30000)")
 
 SERVER_STARTED_BY_US=0
 if ! curl -sf "http://localhost:$PORT" >/dev/null 2>&1; then

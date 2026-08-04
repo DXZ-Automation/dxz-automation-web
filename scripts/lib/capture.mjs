@@ -68,7 +68,11 @@ async function main() {
         await page.goto(url, { waitUntil: "networkidle" });
         await page.evaluate(() => document.fonts && document.fonts.ready).catch(() => {});
 
-        const dir = path.join(outDir, route.name, `${viewport}px`);
+        const dir = path.join(outDir, slugify(route.name), `${viewport}px`);
+        const resolvedDir = path.resolve(dir);
+        if (resolvedDir !== outDir && !resolvedDir.startsWith(outDir + path.sep)) {
+          throw new Error(`capture: route name "${route.name}" resolves outside output dir`);
+        }
         fs.mkdirSync(dir, { recursive: true });
 
         await page.screenshot({ path: path.join(dir, "full-page.png"), fullPage: true });

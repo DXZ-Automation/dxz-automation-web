@@ -73,11 +73,11 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#0F0F11]/10 relative h-fit rounded-3xl overflow-hidden m-8">
+    <footer className="bg-[#0F0F11]/10 relative h-fit rounded-3xl overflow-hidden mx-0 mt-8">
       <div className="max-w-7xl mx-auto p-14 z-40 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 lg:gap-16 pb-12">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8 lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-0">
           {/* Brand section */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 lg:max-w-[240px]">
             <DxzLogo
               iconClassName="w-9 shrink-0 sm:w-[53px] md:w-[53px] lg:w-[53px]"
               dxzClassName="text-[21px] sm:text-[30px] md:text-[30px] lg:text-[30px]"
@@ -93,8 +93,8 @@ export function Footer() {
 
           {/* Footer link sections */}
           {footerLinks.map((section) => (
-            <div key={section.title}>
-              <h4 className="text-white text-lg font-semibold mb-6">
+            <div key={section.title} className="lg:max-w-[240px]">
+              <h4 className="text-red-500 text-lg font-semibold mb-6">
                 {section.title}
               </h4>
               <ul className="space-y-3">
@@ -116,8 +116,8 @@ export function Footer() {
           ))}
 
           {/* Contact section */}
-          <div>
-            <h4 className="text-white text-lg font-semibold mb-6">
+          <div className="lg:max-w-[240px]">
+            <h4 className="text-red-500 text-lg font-semibold mb-6">
               Contact Us
             </h4>
             <ul className="space-y-4">
@@ -142,7 +142,7 @@ export function Footer() {
           </div>
         </div>
 
-        <hr className="border-t border-gray-700 my-8" />
+        <hr className="border-t border-red-500/20 my-8" />
 
         {/* Footer bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0">

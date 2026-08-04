@@ -156,10 +156,10 @@ export function Footer() {
       />
 
       {/* Text hover effect — same width as the divider (mx-[1cm]), height matched to the SVG's own
-          800:100 viewBox ratio so the wordmark fills the box with no dead space above/below */}
+          800:200 viewBox ratio so the wordmark fills the box with no dead space above/below */}
       <div
         id="footer-wordmark"
-        className="hidden lg:flex items-center justify-center mx-[1cm] mb-[1cm] aspect-[8/1]"
+        className="hidden lg:flex items-center justify-center mx-[1cm] mb-[1cm] aspect-[4/1]"
       >
         <TextHoverEffect text="DXZ AUTOMATION" className="z-50" />
       </div>

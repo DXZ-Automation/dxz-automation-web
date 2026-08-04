@@ -3,6 +3,7 @@ import "./globals.css";
 import { DXZChatWidget } from "@/components/DXZChatWidget";
 import { ParticleNetworkBackground } from "@/components/ui/particle-network-bg";
 import { validateEnvironment } from "@/lib/env-check";
+import { Analytics } from "@vercel/analytics/next";
 
 // Validate required env vars at startup; surfaces misconfigurations in logs.
 validateEnvironment();
@@ -24,6 +25,7 @@ export default function RootLayout({
         <ParticleNetworkBackground />
         {children}
         <DXZChatWidget />
+        <Analytics />
       </body>
     </html>
   );

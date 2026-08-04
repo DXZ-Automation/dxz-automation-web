@@ -143,19 +143,26 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+        {/* Copyright — sits left, directly above the divider */}
+        <p className="mt-8 text-sm">
+          &copy; {new Date().getFullYear()} DXZ Automation. All rights reserved.
+        </p>
       </div>
 
-      <hr className="relative z-40 border-t border-red-500/20 mx-8 my-8" />
+      <hr
+        id="footer-divider"
+        className="relative z-40 border-t border-red-500/20 mx-[1cm] mt-8 mb-8"
+      />
 
-      {/* Text hover effect — fills the remaining space down to the footer's bottom edge */}
-      <div className="hidden lg:flex h-80 items-center justify-center px-32">
+      {/* Text hover effect — full-bleed width, vertical gaps matched to the copyright-to-divider spacing */}
+      <div
+        id="footer-wordmark"
+        className="hidden lg:flex items-center justify-center mx-0 mb-8"
+        style={{ height: "calc(100vh - 4rem)" }}
+      >
         <TextHoverEffect text="DXZ AUTOMATION" className="z-50" />
       </div>
-
-      {/* Copyright */}
-      <p className="absolute left-8 bottom-8 z-40 text-sm">
-        &copy; {new Date().getFullYear()} DXZ Automation. All rights reserved.
-      </p>
 
       <FooterBackgroundGradient />
     </footer>

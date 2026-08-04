@@ -17,7 +17,7 @@ export function CTASection() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="group relative overflow-hidden bg-[#030303] p-8 sm:p-12 lg:p-24 hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300">
+        <div className="group relative bg-[#030303] p-8 sm:p-12 lg:p-24 hover:bg-red-950/[0.03] shadow-[inset_0_0_0_1px_#dc2626] hover:shadow-[inset_0_0_0_2px_#dc2626] transition-[background-color,box-shadow] duration-300">
           <RedFrameCorners />
 
           {/* Noise overlay */}
@@ -30,7 +30,7 @@ export function CTASection() {
             Start Here
           </p>
 
-          <h2 className="mb-6 font-mono text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.12]">
+          <h2 className="mb-6 font-mono text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.12] hover:text-red-500 transition-colors duration-300">
             <span className="block">Find out exactly</span>
             <span className="mt-3 block italic">how much you&apos;re losing.</span>
           </h2>

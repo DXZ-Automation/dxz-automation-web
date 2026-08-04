@@ -1,0 +1,19 @@
+{
+  "baseURL": "http://localhost:3000",
+  "devCommand": "npm run dev",
+  "readyTimeoutMs": 45000,
+  "viewports": [390, 768, 1440],
+  "diffThreshold": 0.1,
+  "routes": [
+    {
+      "path": "/",
+      "name": "home",
+      "scrollTargets": ["#hero", "#services", "#process", "#contact"],
+      "hoverSelectors": [
+        { "name": "hero-cta", "selector": "#hero a[href='#process']" },
+        { "name": "nav-book-call", "selector": "header a[href='https://cal.com/dxz-automation']" },
+        { "name": "service-card-1", "selector": "#services .group:nth-of-type(1)" }
+      ]
+    }
+  ]
+}

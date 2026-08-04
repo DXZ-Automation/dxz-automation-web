@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+if [ ! -f "visual.config.json" ]; then
+  exit 0
+fi
+
+STAGED=$(git diff --cached --name-only --diff-filter=ACM)
+if ! echo "$STAGED" | grep -qE '\.(tsx|jsx|css|scss)$|tailwind\.config\.|globals\.css'; then
+  exit 0
+fi
+
+echo "visual-regression: staged changes touch styling-relevant files, running visual diff gate..."
+
+if ! bash scripts/visual-diff.sh; then
+  echo ""
+  echo "visual-regression: BLOCKED — one or more images exceeded the diff threshold."
+  echo "visual-regression: see visual/diff/report.json and the annotated PNGs in visual/diff/ for details."
+  if [ -f visual/diff/report.json ]; then
+    node -e "
+      const r = JSON.parse(require('fs').readFileSync('visual/diff/report.json', 'utf8'));
+      const failing = r.rows.filter((row) => row.exceeds);
+      console.log('');
+      console.log('Changed elements:');
+      for (const row of failing) {
+        console.log('  - ' + row.image + '  (' + row.diffPercent + '% changed' + (row.note ? ', ' + row.note : '') + ')');
+      }
+    "
+  fi
+  echo ""
+  echo "Fix the regression, or if intentional: run 'npm run visual:baseline', review, git add visual/baseline, and re-commit."
+  exit 1
+fi
+
+echo "visual-regression: all images within threshold, commit allowed."
+exit 0

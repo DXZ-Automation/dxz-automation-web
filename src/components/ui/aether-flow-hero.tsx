@@ -19,7 +19,7 @@ const fadeUpVariants = {
 
 export function AetherFlowHero() {
   return (
-    <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+    <div id="hero" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
       <div className="relative z-10 text-center p-6">
         <motion.div
           custom={0}

@@ -20,6 +20,14 @@ Use `/deploy` to commit, push, and deploy.
 - Team: Vercel DXZ Automation Pro
 - Last deploy: 4d ago
 
+## Deployment Verification
+
+After any CSS/UI change: build locally, deploy, then verify the LIVE URL (not localhost) with a browser screenshot before reporting done. Never report a visual change complete based on local-only state.
+
+## Visual Change Protocol
+
+Before editing styling, restate the intended visual behavior in one sentence and wait for confirmation. Never remove or replace existing visual elements (borders, frames, decorative components) unless explicitly asked. One logical visual change per commit so it can be reverted independently.
+
 ## Key Routes
 
 | Route | Purpose |

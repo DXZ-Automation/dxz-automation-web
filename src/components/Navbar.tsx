@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GlowButton } from "@/components/ui/glow-button";
 import { DxzLogo } from "@/components/ui/dxz-logo-mark";
@@ -9,9 +9,24 @@ const links = ["Services", "Process", "Contact"];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const heroHeight = document.getElementById("hero")?.offsetHeight ?? window.innerHeight;
+
+      setScrolled(currentY > 40);
+
+      if (currentY > heroHeight && currentY > lastScrollY.current) {
+        setHidden(true);
+      } else if (currentY < heroHeight || currentY < lastScrollY.current) {
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentY;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -24,8 +39,8 @@ export function Navbar() {
           : "bg-transparent"
       }`}
       initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      animate={{ opacity: hidden ? 0 : 1, y: hidden ? "-100%" : 0 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <div className="relative mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-[72px]">
         <a href="#" className="group">

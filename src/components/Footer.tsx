@@ -152,14 +152,13 @@ export function Footer() {
 
       <hr
         id="footer-divider"
-        className="relative z-40 border-t border-red-500/20 mx-[1cm] mt-8 mb-8"
+        className="relative z-40 border-t border-red-500/20 mx-[1cm] mt-8 mb-[1cm]"
       />
 
-      {/* Text hover effect — full-bleed width, vertical gaps matched to the copyright-to-divider spacing */}
+      {/* Text hover effect — original compact size, spanning the viewport minus a 1cm gap on each side */}
       <div
         id="footer-wordmark"
-        className="hidden lg:flex items-center justify-center mx-0 mb-8"
-        style={{ height: "calc(100vh - 4rem)" }}
+        className="hidden lg:flex items-center justify-center w-[calc(100vw-2cm)] mx-[1cm] h-[30rem] mb-[1cm]"
       >
         <TextHoverEffect text="DXZ AUTOMATION" className="z-50" />
       </div>

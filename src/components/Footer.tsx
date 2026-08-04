@@ -6,7 +6,7 @@ import { DxzLogo } from "@/components/ui/dxz-logo-mark";
 
 /** lucide-react in this project dropped brand/logo icons, so the Instagram
  *  glyph is drawn inline in lucide's own stroke style (24x24, currentColor). */
-function InstagramIcon({ size = 20 }: { size?: number }) {
+function InstagramIcon({ size = 20, className }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
@@ -17,6 +17,7 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      className={className}
     >
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -61,20 +62,18 @@ const contactInfo = [
     icon: <MapPin size={18} className="text-red-500" />,
     text: "Calgary, AB",
   },
-];
-
-const socialLinks = [
   {
-    icon: <InstagramIcon size={20} />,
-    label: "Instagram",
+    icon: <InstagramIcon size={18} className="text-red-500" />,
+    text: "@dxz.automation",
     href: "https://www.instagram.com/dxz.automation?utm_source=qr",
+    external: true,
   },
 ];
 
 export function Footer() {
   return (
     <footer className="bg-[#0F0F11]/10 relative h-fit rounded-3xl overflow-hidden mx-0 mt-8">
-      <div className="max-w-7xl mx-auto p-14 z-40 relative">
+      <div className="max-w-7xl mx-auto px-14 pt-14 z-40 relative">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8 lg:flex lg:flex-row lg:items-start lg:justify-between lg:gap-0">
           {/* Brand section */}
           <div className="flex flex-col space-y-4 lg:max-w-[240px]">
@@ -127,6 +126,9 @@ export function Footer() {
                   {item.href ? (
                     <a
                       href={item.href}
+                      {...("external" in item && item.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       className="hover:text-red-500 transition-colors"
                     >
                       {item.text}
@@ -141,41 +143,19 @@ export function Footer() {
             </ul>
           </div>
         </div>
-
-        <hr className="border-t border-red-500/20 my-8" />
-
-        {/* Footer bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm space-y-4 md:space-y-0">
-          {/* Social icons */}
-          <div className="flex space-x-6 text-gray-400">
-            {socialLinks.map(({ icon, label, href }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="hover:text-red-500 transition-colors"
-              >
-                {icon}
-              </a>
-            ))}
-          </div>
-
-          {/* Copyright */}
-          <div className="flex flex-col items-center gap-1 text-center md:items-end md:text-right">
-            <p>&copy; {new Date().getFullYear()} DXZ Automation. All rights reserved.</p>
-            <p className="font-mono text-[10px] tracking-widest uppercase text-red-500">
-              Built by Daniel X Zak
-            </p>
-          </div>
-        </div>
       </div>
 
-      {/* Text hover effect */}
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-36">
+      <hr className="relative z-40 border-t border-red-500/20 mx-8 my-8" />
+
+      {/* Text hover effect — fills the remaining space down to the footer's bottom edge */}
+      <div className="hidden lg:flex h-80 items-center justify-center px-32">
         <TextHoverEffect text="DXZ AUTOMATION" className="z-50" />
       </div>
+
+      {/* Copyright */}
+      <p className="absolute left-8 bottom-8 z-40 text-sm">
+        &copy; {new Date().getFullYear()} DXZ Automation. All rights reserved.
+      </p>
 
       <FooterBackgroundGradient />
     </footer>

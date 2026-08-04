@@ -59,7 +59,7 @@ export function Navbar() {
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="font-mono text-xs tracking-widest uppercase text-zinc-500 hover:text-white transition-colors duration-200"
+              className="font-mono text-xs tracking-widest uppercase text-white hover:text-red-500 transition-colors duration-200"
             >
               {link}
             </a>
